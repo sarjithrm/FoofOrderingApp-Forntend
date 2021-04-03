@@ -24,7 +24,7 @@ class Header extends Component{
                             style={{color: 'white'}}
                         />
                     </div>
-                    <div>
+                    <div className="login">
                         <Button
                             variant="contained"
                             color="default"

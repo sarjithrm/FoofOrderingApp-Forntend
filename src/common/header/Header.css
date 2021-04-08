@@ -1,7 +1,6 @@
 .app-header{
     background-color: #333333;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 50px;
@@ -31,6 +30,22 @@
     padding-left: 30px;
     width: 100%;
     color: white;
+}
+
+.tabs{
+    margin-bottom: 20px;
+}
+
+.displayNone{
+    display: none;
+}
+
+.displayBlock{
+    display: block;
+}
+
+.red{
+    color: red;
 }
 
 @media (max-width: 550px){

@@ -1,0 +1,10 @@
+.container{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.message{
+    margin-left: 2%;
+}

@@ -25,6 +25,7 @@ class Details extends Component {
         city:"",
         sum:"0.00",
         snackBarOpen:false,
+        snackbarIsOpen: false,
         cartItems: { 
           restaurant : null, 
           itemList: [], 
@@ -342,7 +343,7 @@ return(<div className="mainDiv">
   />
   <Snackbar
                     anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                    open={this.state.snackBarOpen}
+                    open={this.state.snackbarIsOpen}
                     onClose={this.closeSnackbar}
                     message="Logged in successfully!"
                 />

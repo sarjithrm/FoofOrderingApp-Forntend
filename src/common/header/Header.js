@@ -258,6 +258,14 @@ class Header extends Component{
                             onChange={(event) => this.searchChangeHandler(event)}
                         />
                     </div>
+                    <div className="login">
+                        <Button
+                            variant="contained"
+                            color="default"
+                            startIcon={<AccountCircle />}
+                        >
+                            LOGIN
+                        </Button>
                     }
                     <div>
                         {this.state.loggedIn === false && 

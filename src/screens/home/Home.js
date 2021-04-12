@@ -7,8 +7,8 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import CardMedia from '@material-ui/core/CardMedia';
-import StarRateIcon from '@material-ui/icons/StarRate';
 import Snackbar from '@material-ui/core/Snackbar';
+import 'font-awesome/css/font-awesome.min.css';
 
 const styles = theme => ({
     card: {
@@ -113,11 +113,11 @@ class Home extends Component{
                                     <br/>
                                     <Typography className={classes.footer}>
                                         <div className={classes.rating}>
-                                            <StarRateIcon />
-                                            <span>  {restaurant.customer_rating} ({restaurant.number_customers_rated})</span>
+                                            <i className="fa fa-star" aria-hidden="true"></i>
+                                            <span>&nbsp;&nbsp;{restaurant.customer_rating} ({restaurant.number_customers_rated})</span>
                                         </div>
                                         <span>
-                                            ₹{restaurant.average_price} for two
+                                            <i className="fa fa-inr" aria-hidden="true"></i> {restaurant.average_price} for two
                                         </span>
                                     </Typography>
                                 </CardContent>

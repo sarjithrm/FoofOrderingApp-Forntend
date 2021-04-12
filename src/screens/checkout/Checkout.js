@@ -369,8 +369,7 @@ let dataCheckout = JSON.stringify({
     ,
     "payment_id": sessionStorage.getItem("paymentMethod"),
     "restaurant_id": JSON.parse(sessionStorage.getItem("restaurantDetails")).id     
-})
-console.log(dataCheckout);       
+}) 
 let that = this;
 let access_token = sessionStorage.getItem("access-token");
 let xhrCheckout = new XMLHttpRequest();
@@ -651,7 +650,7 @@ render(){
   return (this.mounted === true ?      
 
     <div>
-      <Header logoutHandler={this.loginredirect} showSearch = {false} profile={1}/>
+      <Header paths={this.props} logoutHandler={this.loginredirect} showSearch = {false} profile={1}/>
       <Grid container spacing={1}>
         <Grid item xs={12} md={8}>
           <div className={classes.root}>

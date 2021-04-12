@@ -49,7 +49,6 @@ class Home extends Component{
         xhr.addEventListener("readystatechange", function () {
             let feed    =   []
             if (this.readyState === 4) {
-                console.log(JSON.parse(this.responseText).restaurants);
                 feed        =   JSON.parse(this.responseText).restaurants;
                 that.setState({restaurants: feed});
             }
@@ -82,18 +81,23 @@ class Home extends Component{
         this.setState({snackbarIsOpen: false})
     }
 
+    getDetails = (restaurant) => {
+        let detailsPageUrl = "/restaurant/" + restaurant.id; 
+        return this.props.history.push(detailsPageUrl);
+    }
+
     render(){
 
         const {classes} = this.props;
         return(
             <div>
-                <Header paths={this.props} searchHandler={this.searchHandler} baseUrl={this.props.baseUrl} openSnackbar={this.openSnackbar} profile={1}/>
+                <Header paths={this.props} searchHandler={this.searchHandler} baseUrl={this.props.baseUrl} openSnackbar={this.openSnackbar} profile={1} showSearch = {true}/>
                 {this.state.restaurants.length === 0 &&
                     <h4 className="message">No restaurant with the given name.</h4>
                 }
                 <div className="container">
                     {this.state.restaurants.length > 0 && this.state.restaurants.map((restaurant) => (
-                        <Card className={classes.card} key={restaurant.id} onClick={() => {let detailsPageUrl = '/restaurant/'+ {restaurant.uuid}; return this.props.history.push(detailsPageUrl)}}>
+                        <Card className={classes.card} key={restaurant.id} onClick={this.getDetails(restaurant)}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"

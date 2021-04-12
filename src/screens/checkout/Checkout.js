@@ -377,7 +377,7 @@ let xhrCheckout = new XMLHttpRequest();
 xhrCheckout.addEventListener("readystatechange", function () {
     if (this.readyState === 4) {              
         let checkoutResponse = JSON.parse(this.response);
-        if(checkoutResponse.status == 201){
+        if(checkoutResponse.status === 201){
           let response =   "Unable to place your order! Please try again!";
           that.setState({saveOrderResponse : response});
           that.openMessageHandler();
@@ -651,7 +651,7 @@ render(){
   return (this.mounted === true ?      
 
     <div>
-      <Header logoutHandler={this.loginredirect} showSearch = {false} searchRestaurantsByName = {this.searchRestaurantsByName}/>
+      <Header logoutHandler={this.loginredirect} showSearch = {false} profile={1}/>
       <Grid container spacing={1}>
         <Grid item xs={12} md={8}>
           <div className={classes.root}>

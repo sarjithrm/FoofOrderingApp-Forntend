@@ -244,7 +244,7 @@ class Header extends Component{
             <div>
                 <header className="app-header">
                     <FastFoodIcon className="logo" fontSize="large"/>
-                    { this.props.profile === 1 &&
+                    { this.props.showSearch === true &&
                     <div className="search">
                         <div className="searchIcon">
                             <SearchIcon />

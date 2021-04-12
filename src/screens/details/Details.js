@@ -186,7 +186,7 @@ checkOutCart = (e) => {
 render(){
 return(<div className="mainDiv">
 
-   <Header paths={this.props} baseUrl={this.props.baseUrl} profile={1}/>
+   <Header paths={this.props} baseUrl={this.props.baseUrl} profile={1} showSearch = {false}/>
    <div>
    <div className="resMainDiv">
   <div style={{marginLeft:"2.5%",marginRight:"2.5%"}}>

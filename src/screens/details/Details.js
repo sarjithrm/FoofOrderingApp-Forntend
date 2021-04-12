@@ -186,7 +186,8 @@ checkOutCart = (e) => {
 render(){
 return(<div className="mainDiv">
 
-   <Header logoutHandler={this.loginredirect} baseUrl= "http://localhost:8080/api/"/><div>
+   <Header paths={this.props} baseUrl={this.props.baseUrl} profile={1}/>
+   <div>
    <div className="resMainDiv">
   <div style={{marginLeft:"2.5%",marginRight:"2.5%"}}>
   <Grid item container>

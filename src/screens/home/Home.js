@@ -93,7 +93,7 @@ class Home extends Component{
                 }
                 <div className="container">
                     {this.state.restaurants.length > 0 && this.state.restaurants.map((restaurant) => (
-                        <Card className={classes.card} key={restaurant.id}>
+                        <Card className={classes.card} key={restaurant.id} onClick={() => {let detailsPageUrl = '/restaurant/'+ {restaurant.uuid}; return this.props.history.push(detailsPageUrl)}}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"

@@ -81,7 +81,7 @@ class Home extends Component{
         this.setState({snackbarIsOpen: false})
     }
 
-    getDetails = (restaurant) => {
+    getDetails = (event, restaurant) => {
         let detailsPageUrl = "/restaurant/" + restaurant.id; 
         return this.props.history.push(detailsPageUrl);
     }
@@ -97,7 +97,7 @@ class Home extends Component{
                 }
                 <div className="container">
                     {this.state.restaurants.length > 0 && this.state.restaurants.map((restaurant) => (
-                        <Card className={classes.card} key={restaurant.id} onClick={this.getDetails(restaurant)}>
+                        <Card className={classes.card} key={restaurant.id} onClick={((event) => this.getDetails(event, restaurant))}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"

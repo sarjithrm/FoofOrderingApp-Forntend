@@ -183,10 +183,18 @@ checkOutCart = (e) => {
   }
 }
 
+openSnackbar = () => {
+  this.setState({snackbarIsOpen: true})
+}
+
+closeSnackbar = () =>{
+  this.setState({snackbarIsOpen: false})
+}
+
 render(){
 return(<div className="mainDiv">
 
-   <Header paths={this.props} baseUrl={this.props.baseUrl} profile={1} showSearch = {false}/>
+   <Header paths={this.props} baseUrl={this.props.baseUrl} profile={1} showSearch = {false} openSnackbar={this.openSnackbar}/>
    <div>
    <div className="resMainDiv">
   <div style={{marginLeft:"2.5%",marginRight:"2.5%"}}>
@@ -332,6 +340,12 @@ return(<div className="mainDiv">
             </IconButton>
         }
   />
+  <Snackbar
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                    open={this.state.snackBarOpen}
+                    onClose={this.closeSnackbar}
+                    message="Logged in successfully!"
+                />
 </div>
 );
   }
